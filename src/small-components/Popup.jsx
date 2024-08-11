@@ -48,9 +48,9 @@ const Popup = ({ onClose, children, title=null, titleClassName='', backgroundCol
         className="popup-overlay"
         onClick={handleClose}
       ></div>
-      <div className={`popup-main-container ${closing ? 'closing' : ''}`}>
-        <div className={`popup-container ${!backgroundColor && 'popup-container-background'}`} style={{backgroundColor}}>
-          <div className={`${titleClassName} ${title ? 'popup-title-wrapper' : `popup-title-wrapper-without-title`}`}>
+      <div className={`popup-main-container ${closing ? 'closing' : ''}`} style={{background: backgroundColor}}>
+        <div className={`popup-container ${!backgroundColor && 'popup-container-background'}`}>
+          <div className={`${titleClassName} ${title ? 'popup-title-wrapper' : `popup-title-wrapper-without-title`} ${backgroundColor && 'titleColor'}`}>
             {title}
             <div onClick={handleClose}>
               <GiTireIronCross size={25}/>

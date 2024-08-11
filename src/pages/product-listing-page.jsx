@@ -181,7 +181,6 @@ const ProductListingPage = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
     <div className="global-margin">
       <ScrollToTopButton />
@@ -266,7 +265,16 @@ const ProductListingPage = () => {
 
           />}
           {openFilterModal && 
-          <ProductListingMobileFilter setOpenFilterModal={ setOpenFilterModal }/>}
+          <ProductListingMobileFilter 
+            setOpenFilterModal={ setOpenFilterModal }
+            filterLoading={filterLoading}
+            productsFilter={productsFilter}
+            selectedItems={ selectedItems }
+            setSelectedItems={ setSelectedItems }
+            priceRange={ priceRange }
+            setPriceRange={ setPriceRange }
+            setLatestChangingKey={ setLatestChangingKey }
+          />}
         </>
       )}
     </div>

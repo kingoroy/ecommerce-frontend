@@ -19,7 +19,6 @@ const ProductListingFilter = (props) => {
   });
 
   const handleSliderChange = (value, newValue) => {
-    console.log(newValue, 'new ');
     if (newValue && newValue.length === 2) {
       setPriceRange({
         minPrice: newValue[0],
