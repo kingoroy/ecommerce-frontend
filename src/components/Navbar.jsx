@@ -93,8 +93,8 @@ const Navbar = ({isProductDetailPage}) => {
             <div className="navbar-section-container">
               <Link className="navbar-section-link" to='/products?search=men-clothing'>MEN</Link>
               <Link className="navbar-section-link" to='/products?search=women-clothing'>WOMEN</Link>
-              {/* <Link className="navbar-section-link">KIDS</Link>
-              <Link className="navbar-section-link">FOOTWEAR</Link> */}
+              <Link className="navbar-section-link" to='/products?search=kids-clothing'>KIDS</Link>
+              {/* <Link className="navbar-section-link">FOOTWEAR</Link> */}
             </div>
             <SearchBar />
             <div className="navbar-right-container">
