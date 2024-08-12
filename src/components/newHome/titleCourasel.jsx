@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState } from 'react';
+import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
 import { newTitleImages } from '../../assets/pictures/homePage/newTitleImages';
@@ -18,6 +18,22 @@ const TitleTexts = lazy(() => import('./titleTexts'));
 const TitleCarousel = () => {
   const navigate = useNavigate();
   const [titleTextPosition, setTitleTextPosition] = useState('right');
+  const [showScrollDown, setShowScrollDown] = useState(true);
+
+  // Handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 120) {
+        setShowScrollDown(false);
+      } else {
+        setShowScrollDown(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Function to handle navigation based on the collection
   const handleImageClick = (collection) => {
@@ -66,7 +82,12 @@ const TitleCarousel = () => {
           );
         })}
       </Swiper>
-      <div className='scrollDownContainer'>
+      <motion.div
+        className='scrollDownContainer'
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: showScrollDown ? 1 : 0, y: showScrollDown ? 0 : 50 }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
+      >
         <motion.p
           animate={{
             x: [0, -5, 5, 0], // Creates the vibrate effect
@@ -79,7 +100,7 @@ const TitleCarousel = () => {
           }}
         >Scroll down</motion.p>
         <Lottie animationData={animatedScrollDown} loop={true} size={20} className='animatedScroll'/>
-      </div>
+      </motion.div>
     </div>
   );
 };

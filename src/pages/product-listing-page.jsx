@@ -86,7 +86,7 @@ const ProductListingPage = () => {
   };
 
   useEffect(()=>{
-    if (searchQuery !== previousSearchQuery) {
+    if (searchQuery) {
       handleClearAll();
       setFirstLoad(true)
     }
@@ -145,7 +145,7 @@ const ProductListingPage = () => {
         sortBy: sortBy === 'Price: Low to High' ? 'lowToHigh' : sortBy === 'Price: High to Low' ? 'highTOLow' : sortBy,
         selectedFilters,
       }));
-    } else if (firstLoad) {
+    } else if (firstLoad || searchQuery) {
       dispatch(getSearchedProductsThunk({
         searchQuery,
         sortBy: sortBy === 'Price: Low to High' ? 'lowToHigh' : sortBy === 'Price: High to Low' ? 'highTOLow' : sortBy,
