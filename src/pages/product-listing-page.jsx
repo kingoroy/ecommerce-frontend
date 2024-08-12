@@ -20,6 +20,7 @@ import ProductListingEditFilter from "../components/product-listing-page/product
 import { motion } from "framer-motion";
 import ProductListingMobileSortBy from "../components/product-listing-page/product-listing-mobile-sortBy";
 import ProductListingMobileFilter from "../components/product-listing-page/product-listing-mobile-filter";
+import InitialLoadingProduct from "../components/product-listing-page/InitialLoadingProduct";
 
 const ProductListingPage = () => {
   //------------------redux states access----------------
@@ -155,8 +156,8 @@ const ProductListingPage = () => {
         searchQuery,
         selectedFilters,
       }));
-      setFirstLoad(false);
     }
+    setFirstLoad(false)
   }, [anyfilter, dispatch, searchQuery, sortBy, latestChangingKey, selectedItems, firstLoad]);
   
   useEffect(() => {
@@ -181,11 +182,11 @@ const ProductListingPage = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
     <div className="global-margin">
       <ScrollToTopButton />
-      { !START && (!productList || totalProduct===0) && !anyfilter ? 
+      { START  && !anyfilter ? <InitialLoadingProduct /> :
+      !START && (!productList || totalProduct===0) && !anyfilter ? 
       <NoProductFoundPage /> 
       :
       <div className="product-listing-container">
@@ -266,7 +267,16 @@ const ProductListingPage = () => {
 
           />}
           {openFilterModal && 
-          <ProductListingMobileFilter setOpenFilterModal={ setOpenFilterModal }/>}
+          <ProductListingMobileFilter 
+            setOpenFilterModal={ setOpenFilterModal }
+            filterLoading={filterLoading}
+            productsFilter={productsFilter}
+            selectedItems={ selectedItems }
+            setSelectedItems={ setSelectedItems }
+            priceRange={ priceRange }
+            setPriceRange={ setPriceRange }
+            setLatestChangingKey={ setLatestChangingKey }
+          />}
         </>
       )}
     </div>

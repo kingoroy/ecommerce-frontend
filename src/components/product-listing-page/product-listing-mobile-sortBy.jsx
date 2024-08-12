@@ -23,6 +23,7 @@ const ProductListingMobileSortBy = ({
     <Popup 
     onClose={()=>setOpenSortByModal(false)}
     title= 'Sort By'
+    backgroundColor='var(--White)'
     >
         <div className='mobile-sortby-main-container'>
          {options.map((opt, index) => (

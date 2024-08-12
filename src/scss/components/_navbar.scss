@@ -101,9 +101,11 @@
   color: $Black;
   position: relative;
   z-index: inherit;
+  width: 400px;
 
   @include breakpoint(small-only) {
     justify-content: space-between;
+  width: 100%;
   }
   & > input {
     background: $SearchBar-background;

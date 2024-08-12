@@ -13,13 +13,14 @@ import ProtectedRouteLogin from './api/utilities/ProtectedRoute-loginFLow';
 import ProtectedRoute from './api/utilities/ProtectedRoute';
 import ProductListingPage from './pages/product-listing-page';
 import OrderSection from './nested_pages/OrderSection';
+import NewHome from './pages/NewHome';
 
 // const MfApp = React.lazy(() => import('MicroFrontend/App'));
 
 const Router = () => {
   return (
     <Routes>
-      <Route path='/' element={<PageTransition><Home /></PageTransition>} />
+      <Route path='/' element={<PageTransition><NewHome /></PageTransition>} />
       <Route path='/login-signup' element={<ProtectedRouteLogin><PageTransition><LoginSignUp /></PageTransition></ProtectedRouteLogin>} />
       <Route path="/signup" element={<ProtectedRouteLogin><PageTransition><LoginSignUp /></PageTransition></ProtectedRouteLogin>} />
       <Route path="/otp-verification" element={<ProtectedRouteLogin><PageTransition><LoginSignUp /></PageTransition></ProtectedRouteLogin>} />

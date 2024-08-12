@@ -25,7 +25,9 @@
 .popup-container-background {
   @include modalGlassBackground;
 }
-
+.titleColor {
+  color: $Black;
+}
 .popup-title-wrapper {
   width: 100%;
   display: flex;

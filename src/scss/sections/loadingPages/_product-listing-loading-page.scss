@@ -71,3 +71,12 @@
   }
 }
 
+
+.initialLoadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: -100px 0px;
+  height: 80vh;
+  width: 100%;
+}

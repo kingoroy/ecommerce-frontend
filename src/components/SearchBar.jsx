@@ -28,7 +28,7 @@ const SearchBar = () => {
          value={searchedText}
          onChange={handleSearchBar}
         />
-        <div onClick={handleSearchSubmit}><SearchLogo color={isDarkMode ? 'white' : 'black'}/></div>
+        <div onClick={handleSearchSubmit} style={{cursor: 'pointer'}}><SearchLogo color={isDarkMode ? 'white' : 'black'}/></div>
     </form>
   )
 }

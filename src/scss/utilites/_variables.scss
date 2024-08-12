@@ -49,6 +49,7 @@ $fixed-white-overlay-background: var(--fixed-white-overlay-background);
 $white-darklight: var(--white-darklight);
 $grey-dark: var(--grey--dark);
 $selected-address-background: var(--selected-address-background);
+$mood-black: var(--mood-black);
 //------------z-indexes-------------------
 $top-most-zIndex: 100;
 $secondTop-zIndex: 99;
@@ -120,6 +121,7 @@ $bp-small-small: 450px !default;
    --white-darklight: white;
    --grey-dark: grey;
    --selected-address-background: #fcd2f3;
+   --mood-black: #333333;
 }
 
 .dark-mode {
