@@ -73,7 +73,7 @@
   color: #fff; /* Arrow color */
   width: 40px;
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.5); /* Arrow background */
+  background-color: rgba(0, 0, 0, 0.3); /* Arrow background */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -91,10 +91,16 @@
 /* Position adjustments for the arrows */
 .swiper-button-prev {
   left: 80px; 
+  @include breakpoint(small-only) {
+    left: 20px;
+  }
 }
 
 .swiper-button-next {
   right: 80px; /* Adjust position */
+  @include breakpoint(small-only) {
+    right: 20px;
+  }
 }
 
 /* Optional: Arrow icon customization */
@@ -158,12 +164,24 @@
     align-items: center;
     justify-content: center;
     margin: 20px;
+
+    @include breakpoint(small-only) {
+      flex-direction: column;
+      margin: 80px;
+    }
     &>p {
         font-size: 20px;
         color: $Black;
+        @include breakpoint(small-only) {
+          font-size: 30px;
+        }
     }
     .animatedScroll {
         height: 40px;
         width: 40px;
+        @include breakpoint(small-only) {
+          height: 80px;
+          width: 80px;
+        }
     }
 }
