@@ -17,7 +17,7 @@ const SearchBar = () => {
   const handleSearchSubmit = (e) =>{
     e.preventDefault();
     if(searchedText !== '') {
-      dispatch(resetSearchedProduct());
+      // dispatch(resetSearchedProduct());
       navigate(`/products?search=${searchedText}`);
     }
   }
