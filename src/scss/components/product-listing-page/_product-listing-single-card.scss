@@ -208,18 +208,20 @@
   border-top-right-radius: 20px;
   height:100%;
   border-top-left-radius: 20px;
-}
-.courosel-image-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-}
-.carousel-image {
-  width: 100%;
-  object-fit: contain;
-  height: 100%;
+
+  .courosel-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+  
+    .carousel-image {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
 }
 
 

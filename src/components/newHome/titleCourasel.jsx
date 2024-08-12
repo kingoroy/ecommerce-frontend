@@ -1,7 +1,7 @@
 import React, { Suspense, lazy, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
-import { newTitleImages } from '../../assets/pictures/homePage/newTitleImages';
+import { newTitleImages, newTitleImagesMobile } from '../../assets/pictures/homePage/newTitleImages';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -11,12 +11,14 @@ import { Pagination, Autoplay, EffectFade, Navigation } from 'swiper/modules';
 import Lottie from 'lottie-react';
 import animatedScrollDown from '../../assets/animatedImages/ScrollDown.json';
 import { useNavigate } from 'react-router-dom';
+import useBreakpoints from '../../api/utilities/responsive';
 
 // Lazy load the TitleTexts component
 const TitleTexts = lazy(() => import('./titleTexts'));
 
 const TitleCarousel = () => {
   const navigate = useNavigate();
+  const {isMobile} = useBreakpoints();
   const [titleTextPosition, setTitleTextPosition] = useState('right');
   const [showScrollDown, setShowScrollDown] = useState(true);
 
@@ -43,7 +45,7 @@ const TitleCarousel = () => {
       navigate('/products?search=women-clothing'); // Update this path based on your routing
     }
   };
-
+  const titleImages = isMobile ? newTitleImagesMobile : newTitleImages;
   return (
     <div className="title-carousel-container">
       <Swiper
@@ -52,13 +54,13 @@ const TitleCarousel = () => {
         slidesPerView={1}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
-        loop={false}
+        loop={true}
         effect="fade"
         navigation={true}
         fadeEffect={{ crossFade: true }}
         className='product-courosel-swiper-container'
       >
-        {newTitleImages?.map((item, index) => {
+        { titleImages?.map((item, index) => {
           const collection = index === 0 ? 'MENS COLLECTION' : 'WOMENS COLLECTION';
           return (
             <SwiperSlide

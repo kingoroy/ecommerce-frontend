@@ -17,10 +17,12 @@
     position: relative;
     box-sizing: border-box;
     background-color: $White;
+    overflow-x: hidden;
     min-height: calc(100vh - 100px);
+
      @include breakpoint(small-only) {
-      display: flex;
-      justify-content: center;
+      // display: flex;
+      // justify-content: center;
       margin: 20px auto 0px;
      }
 }
