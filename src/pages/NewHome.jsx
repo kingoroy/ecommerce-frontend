@@ -7,6 +7,7 @@ import useBreakpoints from '../api/utilities/responsive';
 import getCategoriesProductThunk from '../api/asyncThunk/product-thunk/getCategories-thunk';
 import NewBrandSection from '../components/newHome/NewBrandSection';
 import CategorySection from '../components/home/CategorySection';
+import NewCategorySection from '../components/newHome/NewCategorySection';
 
 const NewHome = () => {
   const user =useSelector((state)=>state.user);
@@ -27,7 +28,7 @@ const NewHome = () => {
       <TitleCarousel /> 
       <TitleInfo />
       <NewBrandSection />
-      <CategorySection />
+      <NewCategorySection />
     </div>
   )
 }

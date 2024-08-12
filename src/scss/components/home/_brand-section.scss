@@ -123,6 +123,11 @@
   text-align: center;
   font-size: 50px;
   margin-bottom: 40px;
+
+  @include breakpoint(small-only) {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
 }
 
 .homePage-category-section {
@@ -135,6 +140,11 @@
   border-radius: 5px;
   box-shadow: 2px -19.5px 26px -13px #989898;
   // border: 1px solid black;
+
+  @include breakpoint(small-only) {
+    box-shadow: none;
+    border: 1px solid $Grey;
+  }
 
   .brandSection-cardSlides-wrapper {
     display: flex;

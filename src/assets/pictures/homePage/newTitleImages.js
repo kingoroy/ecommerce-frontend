@@ -28,3 +28,14 @@ export const newTitleImages = [
         navigationLink: '/shop/women',
     }
 ]
+
+export const newTitleImagesMobile = [
+    {
+     src: 'https://beststoreshopforyou.myshopify.com/cdn/shop/files/mobile-slider-01_370cee81-634a-4fa9-b123-51f3c570631d.jpg?v=1679999532',
+    navigationLink: '/shop/men'
+    },
+    {
+        src: 'https://beststoreshopforyou.myshopify.com/cdn/shop/files/mobile-slider-02.jpg?v=1679998827',
+        navigationLink: '/shop/women',
+    }
+]
