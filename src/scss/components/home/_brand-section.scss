@@ -105,3 +105,170 @@
     }
   }
 }
+
+.brandSection-main-newcontainer {
+  position: relative;
+  margin: 20px 10px 0px;
+
+@include breakpoint(medium) {
+    margin: 40px 80px 0px;
+}
+
+@include breakpoint(large) {
+    margin: 40px 140px 0px;
+}
+
+.ourBrands-text {
+  @include primaryGradientText;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+.homePage-category-section {
+  display: flex;
+  align-items: center;
+  background-color: $White;
+  height: fit-content;
+  min-height: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px -19.5px 26px -13px #989898;
+  // border: 1px solid black;
+
+  .brandSection-cardSlides-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .brandSection-cardSlide {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 10px;
+
+      .brandSection-cardSlide-image-wrapper {
+        height: 120px;
+        width: 120px;
+        // box-shadow: $Box-shadow-blue;
+        background-color: $fixed-white;
+        margin: 10px;
+        border-radius: 50%;
+        display: flex;
+        border: 1px solid $Grey-text-color;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint(small-only) {
+            height: 80px;
+            width: 80px;
+        }
+
+        &>img {
+          height: 80px;
+          width: 80px;
+          @include breakpoint(small-only) {
+            height: 60px;
+            width: 60px;
+        }
+        }
+      }
+
+      .brandSection-brandName {
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 5px;
+        font-size: 22px;
+        color: $brandTitleText;
+        @include breakpoint(small-only) {
+         font-size: 14px;
+      }
+      }
+
+      &:hover {
+        // border-radius: 4px;
+        // transition: all 0.3s ease;
+        cursor: pointer;
+
+        .brandSection-cardSlide-image-wrapper {
+          // border: none;
+          // transition: border-radius 0.3s ease; 
+          // box-shadow: none;
+          // box-shadow: $circular-boxShadow-primary;
+
+          &>img {
+            transition: scale 0.3s ease; 
+            scale: 1.2;
+          }
+        }
+
+        .brandSection-brandName {
+          color: $primary-btn-red;
+          transition: color 0.3s ease; 
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+.swiper-pagination {
+  top: 164px !important;
+  z-index: 100000 !important;
+}
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 4px;
+  background-color: #ccc; /* Default bullet color */
+  opacity: 1;
+  border-radius: 50px;
+  margin: 20px 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $primary-btn-red; /* Active bullet color */
+}
+
+/* Style for navigation arrows */
+.swiper-button-prev,
+.swiper-button-next {
+color: #fff; /* Arrow color */
+width: 20px;
+height: 20px;
+background-color: rgba(0, 0, 0, 0.5); /* Arrow background */
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+background-color: #000; 
+transform: scale(1.1); 
+}
+
+/* Position adjustments for the arrows */
+.swiper-button-prev {
+left: 0px; 
+top: 52%;
+}
+
+.swiper-button-next {
+right: 0px; 
+top: 52%;
+}
+
+/* Optional: Arrow icon customization */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+font-size: 10px; /* Arrow icon size */
+}
+}
+

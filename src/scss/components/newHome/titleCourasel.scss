@@ -1,0 +1,147 @@
+.title-carousel-container {
+    position: relative;
+
+    .left {
+      left: 100px;
+    }
+    .right {
+        right: 200px;
+    }
+    .titleTextsContainer {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+
+        .limitedTimeText {
+            color: $primary-btn-red;
+        }
+        .shopNowWrapper {
+            background: $primary-btn-red;
+            color: $fixed-white;
+            padding: 8px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: fit-content;
+        }
+        .exclusiveText {
+            color: $mood-black;
+            font-size: 35px;
+            letter-spacing: 2px;
+        }
+        .collection {
+            color: $primary-btn-red;
+            font-size: 50px;
+        }
+    }
+    .swiper-pagination-bullet {
+        width: 40px;
+        height: 6px;
+        background-color: #ccc; /* Default bullet color */
+        opacity: 1;
+        border-radius: 50px;
+        margin: 0 5px;
+        transition: background-color 0.3s ease;
+      }
+      
+      .swiper-pagination-bullet-active {
+        background-color: $primary-btn-red; /* Active bullet color */
+      }
+
+      /* Style for navigation arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff; /* Arrow color */
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Arrow background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #000; /* Hover background color */
+  transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Position adjustments for the arrows */
+.swiper-button-prev {
+  left: 80px; 
+}
+
+.swiper-button-next {
+  right: 80px; /* Adjust position */
+}
+
+/* Optional: Arrow icon customization */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px; /* Arrow icon size */
+}
+}
+
+.titleInfoContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+    padding: 30px 0px;
+    margin-left: -100px;
+
+    .titleInfoMenuWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .menuLogo {
+            height: 80px;
+            width: 80px;
+        }
+        .menuLogoHeadphone {
+            height: 60px;
+            width: 60px;
+        }
+        .menuContent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .titleInfo {
+                color: $primary-btn-red;
+                font-size: 20px;
+            }
+            .extraInfo {
+                color: $Grey;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.scrollDownContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    &>p {
+        font-size: 20px;
+        color: $Black;
+    }
+    .animatedScroll {
+        height: 40px;
+        width: 40px;
+    }
+}

@@ -90,12 +90,12 @@ const Navbar = ({isProductDetailPage}) => {
             <Link className="navbar-logo-container" to="/">
               <DesiCartIcon />
             </Link>
-            <div className="navbar-section-container">
+            {/* <div className="navbar-section-container">
               <Link className="navbar-section-link">MEN</Link>
               <Link className="navbar-section-link">WOMEN</Link>
               <Link className="navbar-section-link">KIDS</Link>
               <Link className="navbar-section-link">FOOTWEAR</Link>
-            </div>
+            </div> */}
             <SearchBar />
             <div className="navbar-right-container">
               <Link to="/wishlist">
